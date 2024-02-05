@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercise 1 LVL 3 | MATCH SIMULATOR MUN VS TOT</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <script defer src="./app.js"></script>
+  </head>
+  <body>
+    <main>
+      <h1>Welcome to Manchester United MATCH ANALYZER</h1>
+      <h3>Our next match is VS Tottenham Spurs</h3>
+      <section id="spurs-container" class="spurs-container">
+        <h2>TOTTENHAM SPURS LINEUP</h2>
+        <div id="spurs-players" class="spurs-players">
+          <h3>Goalkeeper</h3>
+          <ul id="goalkeeperList"></ul>
+
+          <h3>Defenders</h3>
+          <ul id="defendersList"></ul>
+
+          <h3>Midfielders</h3>
+          <ul id="midfieldersList"></ul>
+
+          <h3>Forwards</h3>
+          <ul id="forwardsList"></ul>
+          <h3>Total Media Points: <span id="totalSpursPoints"></span></h3>
+          <h3>Media Average: <span id="averageSpursPoints"></span></h3>
+        </div>
+      </section>
+      <section id="mun-container" class="mun-container">
+        <h2>MANCHESTER UNITED LINEUP</h2>
+        <div id="mun-players" class="mun-players">
+          <h3>Goalkeeper</h3>
+          <select id="goalkeeperMunList">
+            <option value="0" disabled>Choose 1 Goalkeeper...</option>
+          </select>
+          <h3>Defenders</h3>
+          <select id="defendersMunList">
+            <option value="0" disabled>Choose 4 Defenders...</option>
+          </select>
+          <h3>Midfielders</h3>
+          <select id="midfieldersMunList">
+            <option value="0" disabled>Choose 3 Midfielders...</option>
+          </select>
+          <h3>Forwards</h3>
+          <select id="forwardsMunList">
+            <option value="0" disabled>Choose 3 Forwards...</option>
+          </select>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

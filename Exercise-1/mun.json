@@ -1,0 +1,108 @@
+[
+    {
+        "Goalkeepers": [
+            {
+                "name": "André Onana",
+                "points": 80
+            },
+            {
+                "name": "Tom Heaton",
+                "points": 75
+            },
+            {
+                "name": "Altay Bayindir",
+                "points": 69
+            }
+        ],
+        "Defenders": [
+            {
+                "name": "Victor Lindelöf",
+                "points": 80
+            },
+            {
+                "name": "Harry Maguire",
+                "points": 82
+            },
+            {
+                "name": "Lisandro Martínez",
+                "points": 82
+            },
+            {
+                "name": "Tyrell Malacia",
+                "points": 67
+            },
+            {
+                "name": "Raphaël Varane",
+                "points": 80
+            },
+            {
+                "name": "Diogo Dalot",
+                "points": 89
+            },
+            {
+                "name": "Luke Shaw",
+                "points": 89
+            },
+            {
+                "name": "Aaron Wan-Bissaka",
+                "points": 70
+            }
+        ],
+        "Midfielders": [
+            {
+                "name": "Sofyan Amrabat",
+                "points": 76
+            },
+            {
+                "name": "Scott McTominay",
+                "points": 80
+            },
+            {
+                "name": "Bruno Fernandes",
+                "points": 88
+            },
+            {
+                "name": "Christian Eriksen",
+                "points": 67
+            },
+            {
+                "name": "Mason Mount",
+                "points": 77
+            },
+            {
+                "name": "Kobbie Mainoo",
+                "points": 65
+            },
+            {
+                "name": "Daniel Gore",
+                "points": 60
+            }
+        ],
+        "Forwards": [
+            {
+                "name": "Anthony Martial",
+                "points": 50
+            },
+            {
+                "name": "Marcus Rashford",
+                "points": 76
+            },
+            {
+                "name": "Antony",
+                "points": 75
+            },
+            {
+                "name": "Rasmus Højlund",
+                "points": 80
+            },
+            {
+                "name": "Alejandro Garnacho",
+                "points": 85
+            },
+            {
+                "name": "Facundo Pellistri",
+                "points": 75
+            }
+        ]
+    }
+]

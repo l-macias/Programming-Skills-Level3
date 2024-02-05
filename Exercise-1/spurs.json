@@ -1,0 +1,136 @@
+[
+    {
+        "Goalkeepers": [
+            {
+                "name": "Hugo Lloris",
+                "points": 85
+            },
+            {
+                "name": "Guglielmo Vicario",
+                "points": 79
+            },
+            {
+                "name": "Fraser Forster",
+                "points": 79
+            },
+            {
+                "name": "Brandon Austin",
+                "points": 79
+            }
+        ],
+        "Defenders": [
+            {
+                "name": "Eric Dier",
+                "points": 80
+            },
+            {
+                "name": "Cristian Romero",
+                "points": 80
+            },
+            {
+                "name": "Davinson Sánchez",
+                "points": 74
+            },
+            {
+                "name": "Japhet Tanganga",
+                "points": 70
+            },
+            {
+                "name": "Matt Doherty",
+                "points": 70
+            },
+            {
+                "name": "Djed Spence",
+                "points": 70
+            },
+            {
+                "name": "Sergio Reguilón",
+                "points": 74
+            },
+            {
+                "name": "Ben Davies",
+                "points": 76
+            },
+            {
+                "name": "Joe Rodon",
+                "points": 70
+            },
+            {
+                "name": "Mislav Orsic",
+                "points": 71
+            }
+        ],
+        "Midfielders": [
+            {
+                "name": "Oliver Skipp",
+                "points": 70
+            },
+            {
+                "name": "Pierre-Emile Højbjerg",
+                "points": 70
+            },
+            {
+                "name": "Yves Bissouma",
+                "points": 72
+            },
+            {
+                "name": "James Maddison",
+                "points": 74
+            },
+            {
+                "name": "Giovani Lo Celso",
+                "points": 78
+            },
+            {
+                "name": "Ryan Sessegnon",
+                "points": 80
+            },
+            {
+                "name": "Dejan Kulusevski",
+                "points": 60
+            },
+            {
+                "name": "Pape Sarr",
+                "points": 65
+            },
+            {
+                "name": "Rodrigo Bentancur",
+                "points": 65
+            }
+        ],
+        "Forwards": [
+            {
+                "name": "Son Heung-Min",
+                "points": 78
+            },
+            {
+                "name": "Richarlison",
+                "points": 82
+            },
+            {
+                "name": "Bryan Gil",
+                "points": 80
+            },
+            {
+                "name": "Timo Werner",
+                "points": 82
+            },
+            {
+                "name": "Brennan Johnson",
+                "points": 70
+            },
+            {
+                "name": "Manor Solomon",
+                "points": 70
+            },
+            {
+                "name": "Alejo Véliz",
+                "points": 75
+            },
+            {
+                "name": "Dane Scarlett",
+                "points": 75
+            }
+        ]
+    }
+]

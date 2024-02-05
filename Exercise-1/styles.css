@@ -1,0 +1,73 @@
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+}
+main {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.spurs-container,
+.mun-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1,
+h3 {
+  text-align: center;
+  color: #242424;
+}
+
+label {
+  margin-top: 10px;
+}
+
+input,
+select {
+  margin-bottom: 10px;
+  padding: 8px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+button,
+input[type='submit'] {
+  padding: 10px;
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  margin: 5px;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+h2 {
+  text-align: center;
+  font-size: 36px;
+}
+
+ul {
+  display: flex;
+  justify-content: center;
+}
+li {
+  padding: 10px;
+  margin: 10px;
+  border: 1px solid black;
+  line-height: 35px;
+  list-style: none;
+  text-align: center;
+}
