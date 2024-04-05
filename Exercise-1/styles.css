@@ -71,3 +71,16 @@ li {
   list-style: none;
   text-align: center;
 }
+.selected {
+  background-color: #4caf50; /* Cambiar el color de fondo cuando se selecciona */
+  color: #fff; /* Cambiar el color del texto cuando se selecciona */
+  font-weight: bold; /* Hacer el texto en negrita cuando se selecciona */
+}
+
+.hidden {
+  display: none;
+}
+
+.show {
+  display: flex;
+}

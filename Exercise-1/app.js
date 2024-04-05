@@ -1,9 +1,19 @@
 //Declare variables to global use
 let manchesterUnitedPlayers = [];
+let selectedMunPlayers = [];
 let spursPlayers = [];
 let totalSpurs = 0;
-let munLineup = [];
-let spursLineup = [];
+let manTotalPoints;
+
+const goalkeeperIndex = 0;
+const defendersRange = [1, 2, 3, 4];
+const midfieldersRange = [5, 6, 7];
+const forwardsRange = [8, 9, 10];
+
+//Some DOM variables
+const munPlayersContainer = document.getElementById('mun-players');
+const finishBtn = document.getElementById('finish-btn');
+const resultContainer = document.getElementById('result-container');
 
 //Function to fetch JSON files
 const fetchJson = async (url) => {
@@ -18,7 +28,8 @@ const fetchJson = async (url) => {
     console.log(error);
   }
 };
-//Function to calculate Spurs total points
+
+//Function to calculate Spurs total points and average
 const spursTotalPoints = (lineup) => {
   let totalPointsSpurs = lineup.reduce((acc, player) => {
     return acc + player.points;
@@ -26,12 +37,9 @@ const spursTotalPoints = (lineup) => {
   avgSpurs = parseFloat(totalPointsSpurs / 11).toFixed(2);
   totalSpurs = { totalPointsSpurs, avgSpurs };
 };
+
 //Function to create a random Spurs lineup (1-4-3-3)
 const randomSpursLineup = () => {
-  if (!spursPlayers || spursPlayers.length === 0) {
-    console.log('No hay datos de jugadores disponibles.');
-    return;
-  }
   const goalkeeper = spursPlayers.Goalkeepers;
   const defenders = spursPlayers.Defenders;
   const midfielders = spursPlayers.Midfielders;
@@ -72,14 +80,117 @@ const randomSpursLineup = () => {
   spursTotalPoints(spursLineup);
 };
 
-//Initial function to handle async data from fetch
+//MUN
+
+// Function to display Manchester United players in the DOM
+const displayManchesterUnitedPlayers = () => {
+  // Clear container to not duplicate.
+  munPlayersContainer.innerHTML = '';
+
+  // Iterate  array of players
+  for (const position in manchesterUnitedPlayers) {
+    // Create a title for the position in DOM
+    const positionTitle = document.createElement('h3');
+    positionTitle.textContent = position;
+    munPlayersContainer.appendChild(positionTitle);
+
+    // Iterate array and display players in DOM
+    manchesterUnitedPlayers[position].forEach((player) => {
+      const playerItem = document.createElement('li');
+      playerItem.innerHTML = `<b>${player.name}</b> - Points: ${player.points}`;
+      playerItem.setAttribute('data-position', position);
+      playerItem.setAttribute('data-name', player.name);
+      playerItem.setAttribute('data-points', player.points);
+      playerItem.classList.add('player-item');
+      playerItem.addEventListener('click', handlePlayerSelection); // Listen click on player
+      munPlayersContainer.appendChild(playerItem);
+    });
+  }
+};
+
+// Function to handle player selection (click)
+const handlePlayerSelection = (event) => {
+  const playerName = event.currentTarget.getAttribute('data-name');
+  const playerPosition = event.currentTarget.getAttribute('data-position');
+  const playerPoints = event.currentTarget.getAttribute('data-points');
+  console.log(playerPosition);
+  // Check if the player is already selected
+  const isAlreadySelected = selectedMunPlayers.some(
+    (player) => player.name === playerName && player.position === playerPosition
+  );
+
+  // Count the number of players already selected in each position
+  const goalkeepersSelected = selectedMunPlayers.filter(
+    (player) => player.position === 'Goalkeepers'
+  ).length;
+  const defendersSelected = selectedMunPlayers.filter(
+    (player) => player.position === 'Defenders'
+  ).length;
+  const midfieldersSelected = selectedMunPlayers.filter(
+    (player) => player.position === 'Midfielders'
+  ).length;
+  const forwardsSelected = selectedMunPlayers.filter(
+    (player) => player.position === 'Forwards'
+  ).length;
+
+  // Check the max allowed players for each position
+  const maxGoalkeepers = 1;
+  const maxDefenders = 4;
+  const maxMidfielders = 3;
+  const maxForwards = 3;
+
+  // Add the player if not already selected and not exceeding the max allowed players for the position
+  if (
+    !isAlreadySelected &&
+    (playerPosition !== 'Goalkeepers' ||
+      goalkeepersSelected < maxGoalkeepers) &&
+    (playerPosition !== 'Defenders' || defendersSelected < maxDefenders) &&
+    (playerPosition !== 'Midfielders' ||
+      midfieldersSelected < maxMidfielders) &&
+    (playerPosition !== 'Forwards' || forwardsSelected < maxForwards)
+  ) {
+    //Push player to lineup with all data we need
+    selectedMunPlayers.push({
+      name: playerName,
+      position: playerPosition,
+      points: parseInt(playerPoints),
+    });
+    event.currentTarget.classList.add('selected');
+  } else {
+    // If click again, we remove the player from the selected list
+    selectedMunPlayers = selectedMunPlayers.filter(
+      (player) =>
+        !(player.name === playerName && player.position === playerPosition)
+    );
+    event.currentTarget.classList.remove('selected');
+  }
+  //If lineup has 11 players, we show the finish button, else, we hide it.
+  if (selectedMunPlayers.length === 11) {
+    finishBtn.classList.remove('hidden');
+    finishBtn.classList.add('show');
+  } else {
+    finishBtn.classList.add('hidden');
+    finishBtn.classList.remove('show');
+  }
+};
+
+//Function to generate total points from manchester united lineup
+const getManTotalPoints = () => {
+  return (manTotalPoints = selectedMunPlayers.reduce(
+    (acc, player) => acc + player.points,
+    0
+  ));
+};
+
+//Initial Function with fetch json's and invoke functions
 const init = async () => {
   //Fetching Manchester United Players from a JSON file.
-  await fetchJson('./spurs.json')
+  await fetchJson('./mun.json')
     .then((data) => {
       if (data) {
         manchesterUnitedPlayers = data[0];
         console.log(manchesterUnitedPlayers);
+        displayManchesterUnitedPlayers();
       }
     })
     .catch((error) => console.log(error));
@@ -93,6 +204,7 @@ const init = async () => {
       }
     })
     .catch((error) => console.log(error));
+  //Invoke spurs functions
   randomSpursLineup();
   obtainPosition(spursLineup);
   addTotalSpursPoints();
@@ -105,13 +217,14 @@ const addPlayerToList = (player, listId) => {
   listItem.innerHTML = `<b>${player.name}</b>  <br>Points: <b>${player.points}</b>`;
   list.appendChild(listItem);
 };
-
+//Function to add points to Spurs and average in DOM
 const addTotalSpursPoints = () => {
   const totalSpursPoints = document.getElementById('totalSpursPoints');
   totalSpursPoints.textContent = `Total Points: ${totalSpurs.totalPointsSpurs}`;
   const averageSpursPoints = document.getElementById('averageSpursPoints');
   averageSpursPoints.textContent = `Average Points: ${totalSpurs.avgSpurs}`;
 };
+
 //Function to obtain position from players
 const obtainPosition = (lineup) => {
   lineup.forEach((player, index) => {
@@ -126,12 +239,33 @@ const obtainPosition = (lineup) => {
     }
   });
 };
-
-//Get index to get position
-const goalkeeperIndex = 0;
-const defendersRange = [1, 2, 3, 4];
-const midfieldersRange = [5, 6, 7];
-const forwardsRange = [8, 9, 10];
+//Function to get Total MAN points
+const getTotalPoints = () => {
+  const manTotalPoints = getManTotalPoints();
+  const spursTotalPoints = totalSpurs.totalPointsSpurs;
+  return { manTotalPoints, spursTotalPoints };
+};
+// Function  to check the winner comparing points of both teams
+const checkWinner = (manTotalPoints, spursTotalPoints) => {
+  let winner = '';
+  if (manTotalPoints > spursTotalPoints) {
+    winner = 'WE WOONNNNNNNNNNNNN!!!!!!!';
+  } else if (manTotalPoints < spursTotalPoints) {
+    winner = 'Spurs Wins';
+  } else {
+    winner = 'Draw';
+  }
+  resultContainer.innerHTML = `
+  <p>Puntaje de Manchester United: ${manTotalPoints}</p>
+  <p>Puntaje de Tottenham Spurs: ${spursTotalPoints}</p>
+  <p>${winner}</p>
+`;
+};
+//Listen finish button and invoke check Winner
+finishBtn.addEventListener('click', () => {
+  const { manTotalPoints, spursTotalPoints } = getTotalPoints();
+  checkWinner(manTotalPoints, spursTotalPoints);
+});
 
 //Start the app
 init();

@@ -31,24 +31,22 @@
       </section>
       <section id="mun-container" class="mun-container">
         <h2>MANCHESTER UNITED LINEUP</h2>
+        <h3>Choose 11 Players in a 4-3-3 Lineup</h3>
         <div id="mun-players" class="mun-players">
           <h3>Goalkeeper</h3>
-          <select id="goalkeeperMunList">
-            <option value="0" disabled>Choose 1 Goalkeeper...</option>
-          </select>
+          <ul id="goalkeeperMunList"></ul>
+
           <h3>Defenders</h3>
-          <select id="defendersMunList">
-            <option value="0" disabled>Choose 4 Defenders...</option>
-          </select>
+          <ul id="defendersMunList"></ul>
+
           <h3>Midfielders</h3>
-          <select id="midfieldersMunList">
-            <option value="0" disabled>Choose 3 Midfielders...</option>
-          </select>
+          <ul id="midfieldersMunList"></ul>
+
           <h3>Forwards</h3>
-          <select id="forwardsMunList">
-            <option value="0" disabled>Choose 3 Forwards...</option>
-          </select>
+          <ul id="forwardsMunList"></ul>
         </div>
+        <button class="hidden" id="finish-btn">Finish Lineup</button>
+        <div class=".mun-container" id="result-container"></div>
       </section>
     </main>
   </body>
