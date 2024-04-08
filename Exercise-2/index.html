@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercise 2 | Amazon Shipping</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <script defer src="./app.js"></script>
+  </head>
+  <body>
+    <main>
+      <div class="form-container">
+        <form>
+          <h3>Shipping Calculator</h3>
+          <label for="source">Source</label>
+          <select name="source-select" id="source-select">
+            <option value="0">Select a source</option>
+          </select>
+          <label for="destination">Destination</label>
+          <select name="destination-select" id="destination-select">
+            <option value="0">Select a Destination</option>
+          </select>
+          <label for="packages"
+            >How Many Packages you will charge? (100 to 199 $50 per km, 200 to
+            500 $60 per km )</label
+          >
+          <input type="number" id="package-count" min="100" max="500" />
+
+          <input type="button" value="Calculate" id="calculate-btn" />
+        </form>
+
+        <div id="result-container" class="result-container"></div>
+      </div>
+    </main>
+  </body>
+</html>

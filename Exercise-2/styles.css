@@ -1,0 +1,89 @@
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+}
+main {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-container,
+.result-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1,
+h3 {
+  text-align: center;
+  color: #242424;
+}
+
+label {
+  margin-top: 10px;
+  font-weight: bold;
+  color: #242424;
+}
+
+input,
+select {
+  margin-bottom: 15px;
+  margin-top: 10px;
+  padding: 8px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+button,
+input[type='submit'] {
+  padding: 10px;
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  margin: 5px;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+h2 {
+  text-align: center;
+  font-size: 36px;
+}
+
+ul {
+  display: flex;
+  justify-content: center;
+}
+li {
+  padding: 10px;
+  margin: 10px;
+  border: 1px solid black;
+  line-height: 35px;
+  list-style: none;
+  text-align: center;
+}
+.selected {
+  background-color: #4caf50; /* Cambiar el color de fondo cuando se selecciona */
+  color: #fff; /* Cambiar el color del texto cuando se selecciona */
+  font-weight: bold; /* Hacer el texto en negrita cuando se selecciona */
+}
+
+.hidden {
+  display: none;
+}
+
+.show {
+  display: flex;
+}
