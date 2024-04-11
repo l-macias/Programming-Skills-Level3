@@ -3,7 +3,75 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Exercise 4 |Clothing</title>
+    <title>United Direct - Manchester United's Shop</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <script defer src="./app.js"></script>
   </head>
-  <body></body>
+  <body>
+    <h1>United Direct - Manchester United's Shop</h1>
+    <div class="container">
+      <form id="jerseyForm">
+        <label for="gender">Gender:</label>
+        <select id="gender">
+          <option value="0" disabled selected>Select gender</option></select
+        ><br />
+
+        <label for="sleeveType">Sleeve Type:</label>
+        <select id="sleeveType">
+          <option value="0" disabled selected>
+            Select sleeve type
+          </option></select
+        ><br />
+
+        <label for="kit">Kit:</label>
+        <select id="kit">
+          <option value="0" selected disabled>Select kit</option>
+        </select>
+        <br />
+
+        <label for="size">Size:</label>
+        <select id="size">
+          <option value="0" disabled selected>Select size</option>
+        </select>
+        <br />
+
+        <label for="quantity">Quantity:</label>
+        <input
+          type="number"
+          id="quantity"
+          min="1"
+          value="1"
+          disabled
+          required
+        /><br />
+        <div>
+          <label for="personalize">Personalize:</label>
+          <input type="checkbox" id="personalize" />
+        </div>
+        <label for="playerNumber">Player Number:</label>
+        <input
+          type="number"
+          min="1"
+          max="99"
+          id="playerNumber"
+          disabled
+        /><br />
+
+        <button type="submit" id="addToCartBtn" disabled>Add to Cart</button>
+        <button type="submit" id="checkoutBtn" disabled>Checkout</button>
+      </form>
+      <div class="club" id="club" style="display: none">
+        <label for="club-member-select"
+          >Are you Member of Manchester United Club?</label
+        >
+        <select name="club-member-select" id="club-member-select">
+          <option value="0" disabled>Choose one Option..</option>
+          <option value="yes">Yes. Go Manchester!</option>
+          <option value="no">No. I Love Ten Hag</option>
+        </select>
+        <br />
+      </div>
+      <div class="cartContainer" id="cartContainer"></div>
+    </div>
+  </body>
 </html>

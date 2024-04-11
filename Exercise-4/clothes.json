@@ -1,164 +1,235 @@
 {
-    "Men": {
-        "ShortSleeved": {
-            "FirstKit": {
-                "XS": 10,
-                "S": 20,
-                "M": 30,
-                "L": 25,
-                "XL": 10,
-                "2XL": 5
+    "jerseys": {
+        "categories": [
+            "Men",
+            "Women",
+            "Children"
+        ],
+        "sizes": [
+            "XS",
+            "S",
+            "M",
+            "L",
+            "XL",
+            "XXL",
+            "3XL"
+        ],
+        "prices": {
+            "standard": {
+                "shortSleeve": {
+                    "Men": 100,
+                    "Women": 100
+                },
+                "longSleeve": {
+                    "Men": 120,
+                    "Women": 120
+                }
             },
-            "SecondKit": {
-                "XS": 8,
-                "S": 18,
-                "M": 28,
-                "L": 24,
-                "XL": 8,
-                "2XL": 4
-            },
-            "ThirdKit": {
-                "XS": 15,
-                "S": 25,
-                "M": 35,
-                "L": 20,
-                "XL": 10,
-                "2XL": 5
+            "children": {
+                "shortSleeve": 70,
+                "longSleeve": 90
             }
         },
-        "LongSleeved": {
-            "FirstKit": {
-                "XS": 9,
-                "S": 19,
-                "M": 29,
-                "L": 24,
-                "XL": 9,
-                "2XL": 4
+        "discount": {
+            "clubMember": 0.2
+        },
+        "personalization": {
+            "cost": 25
+        },
+        "stock": {
+            "Men": {
+                "First Kit": {
+                    "shortSleeve": {
+                        "XS": 12,
+                        "S": 14,
+                        "M": 16,
+                        "L": 18,
+                        "XL": 16,
+                        "XXL": 14,
+                        "3XL": 10
+                    },
+                    "longSleeve": {
+                        "XS": 10,
+                        "S": 12,
+                        "M": 14,
+                        "L": 16,
+                        "XL": 18,
+                        "XXL": 14,
+                        "3XL": 10
+                    }
+                },
+                "Second Kit": {
+                    "shortSleeve": {
+                        "XS": 10,
+                        "S": 12,
+                        "M": 14,
+                        "L": 16,
+                        "XL": 18,
+                        "XXL": 14,
+                        "3XL": 6
+                    },
+                    "longSleeve": {
+                        "XS": 10,
+                        "S": 12,
+                        "M": 14,
+                        "L": 16,
+                        "XL": 18,
+                        "XXL": 14,
+                        "3XL": 6
+                    }
+                },
+                "Third Kit": {
+                    "shortSleeve": {
+                        "XS": 11,
+                        "S": 13,
+                        "M": 15,
+                        "L": 17,
+                        "XL": 19,
+                        "XXL": 15,
+                        "3XL": 5
+                    },
+                    "longSleeve": {
+                        "XS": 6,
+                        "S": 8,
+                        "M": 10,
+                        "L": 12,
+                        "XL": 14,
+                        "XXL": 10,
+                        "3XL": 4
+                    }
+                }
             },
-            "SecondKit": {
-                "XS": 7,
-                "S": 17,
-                "M": 27,
-                "L": 23,
-                "XL": 7,
-                "2XL": 3
+            "Women": {
+                "First Kit": {
+                    "shortSleeve": {
+                        "XS": 13,
+                        "S": 15,
+                        "M": 17,
+                        "L": 19,
+                        "XL": 17,
+                        "XXL": 15,
+                        "3XL": 11
+                    },
+                    "longSleeve": {
+                        "XS": 11,
+                        "S": 13,
+                        "M": 15,
+                        "L": 17,
+                        "XL": 19,
+                        "XXL": 15,
+                        "3XL": 11
+                    }
+                },
+                "Second Kit": {
+                    "shortSleeve": {
+                        "XS": 11,
+                        "S": 13,
+                        "M": 15,
+                        "L": 17,
+                        "XL": 19,
+                        "XXL": 15,
+                        "3XL": 7
+                    },
+                    "longSleeve": {
+                        "XS": 11,
+                        "S": 13,
+                        "M": 15,
+                        "L": 17,
+                        "XL": 19,
+                        "XXL": 15,
+                        "3XL": 7
+                    }
+                },
+                "Third Kit": {
+                    "shortSleeve": {
+                        "XS": 12,
+                        "S": 14,
+                        "M": 16,
+                        "L": 18,
+                        "XL": 20,
+                        "XXL": 16,
+                        "3XL": 6
+                    },
+                    "longSleeve": {
+                        "XS": 7,
+                        "S": 9,
+                        "M": 11,
+                        "L": 13,
+                        "XL": 15,
+                        "XXL": 11,
+                        "3XL": 5
+                    }
+                }
             },
-            "ThirdKit": {
-                "XS": 14,
-                "S": 24,
-                "M": 34,
-                "L": 19,
-                "XL": 9,
-                "2XL": 4
+            "Children": {
+                "First Kit": {
+                    "shortSleeve": {
+                        "XS": 25,
+                        "S": 25,
+                        "M": 25,
+                        "L": 25,
+                        "XL": 25,
+                        "XXL": 25,
+                        "3XL": 25
+                    },
+                    "longSleeve": {
+                        "XS": 16,
+                        "S": 16,
+                        "M": 16,
+                        "L": 16,
+                        "XL": 16,
+                        "XXL": 16,
+                        "3XL": 16
+                    }
+                },
+                "Second Kit": {
+                    "shortSleeve": {
+                        "XS": 14,
+                        "S": 14,
+                        "M": 14,
+                        "L": 14,
+                        "XL": 14,
+                        "XXL": 14,
+                        "3XL": 14
+                    },
+                    "longSleeve": {
+                        "XS": 14,
+                        "S": 14,
+                        "M": 14,
+                        "L": 14,
+                        "XL": 14,
+                        "XXL": 14,
+                        "3XL": 14
+                    }
+                },
+                "Third Kit": {
+                    "shortSleeve": {
+                        "XS": 15,
+                        "S": 15,
+                        "M": 15,
+                        "L": 15,
+                        "XL": 15,
+                        "XXL": 15,
+                        "3XL": 15
+                    },
+                    "longSleeve": {
+                        "XS": 10,
+                        "S": 10,
+                        "M": 10,
+                        "L": 10,
+                        "XL": 10,
+                        "XXL": 10,
+                        "3XL": 10
+                    }
+                }
             }
         }
     },
-    "Women": {
-        "ShortSleeved": {
-            "FirstKit": {
-                "XS": 12,
-                "S": 22,
-                "M": 32,
-                "L": 27,
-                "XL": 12,
-                "2XL": 6
-            },
-            "SecondKit": {
-                "XS": 9,
-                "S": 19,
-                "M": 29,
-                "L": 25,
-                "XL": 9,
-                "2XL": 5
-            },
-            "ThirdKit": {
-                "XS": 15,
-                "S": 25,
-                "M": 35,
-                "L": 20,
-                "XL": 10,
-                "2XL": 5
-            }
-        },
-        "LongSleeved": {
-            "FirstKit": {
-                "XS": 11,
-                "S": 21,
-                "M": 31,
-                "L": 26,
-                "XL": 11,
-                "2XL": 5
-            },
-            "SecondKit": {
-                "XS": 8,
-                "S": 18,
-                "M": 28,
-                "L": 24,
-                "XL": 8,
-                "2XL": 4
-            },
-            "ThirdKit": {
-                "XS": 14,
-                "S": 24,
-                "M": 34,
-                "L": 19,
-                "XL": 9,
-                "2XL": 4
-            }
-        }
-    },
-    "Children": {
-        "ShortSleeved": {
-            "FirstKit": {
-                "XS": 20,
-                "S": 40,
-                "M": 60,
-                "L": 50,
-                "XL": 20,
-                "2XL": 10
-            },
-            "SecondKit": {
-                "XS": 17,
-                "S": 37,
-                "M": 57,
-                "L": 47,
-                "XL": 17,
-                "2XL": 8
-            },
-            "ThirdKit": {
-                "XS": 30,
-                "S": 50,
-                "M": 70,
-                "L": 40,
-                "XL": 20,
-                "2XL": 10
-            }
-        },
-        "LongSleeved": {
-            "FirstKit": {
-                "XS": 10,
-                "S": 20,
-                "M": 30,
-                "L": 25,
-                "XL": 10,
-                "2XL": 5
-            },
-            "SecondKit": {
-                "XS": 10,
-                "S": 20,
-                "M": 30,
-                "L": 25,
-                "XL": 10,
-                "2XL": 5
-            },
-            "ThirdKit": {
-                "XS": 12,
-                "S": 22,
-                "M": 32,
-                "L": 18,
-                "XL": 9,
-                "2XL": 5
-            }
-        }
+    "cart": {
+        "items": [],
+        "clubMember": false,
+        "subtotal": 0,
+        "discount": 0,
+        "total": 0
     }
 }
