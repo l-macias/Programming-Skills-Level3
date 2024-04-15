@@ -56,21 +56,21 @@
           id="playerNumber"
           disabled
         /><br />
-
+        <div class="club" id="club" style="display: none">
+          <label for="club-member-select"
+            >Are you Member of Manchester United Club?</label
+          >
+          <select name="club-member-select" id="club-member-select">
+            <option value="0" disabled selected>Choose one Option..</option>
+            <option value="0.2">Yes. Go Manchester!</option>
+            <option value="0">No. I Love Ten Hag</option>
+          </select>
+          <br />
+        </div>
         <button type="submit" id="addToCartBtn" disabled>Add to Cart</button>
         <button type="submit" id="checkoutBtn" disabled>Checkout</button>
       </form>
-      <div class="club" id="club" style="display: none">
-        <label for="club-member-select"
-          >Are you Member of Manchester United Club?</label
-        >
-        <select name="club-member-select" id="club-member-select">
-          <option value="0" disabled>Choose one Option..</option>
-          <option value="yes">Yes. Go Manchester!</option>
-          <option value="no">No. I Love Ten Hag</option>
-        </select>
-        <br />
-      </div>
+
       <div class="cartContainer" id="cartContainer"></div>
     </div>
   </body>

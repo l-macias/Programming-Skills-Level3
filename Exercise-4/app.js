@@ -11,6 +11,8 @@ const sizeSelect = document.getElementById('size');
 const quantityInput = document.getElementById('quantity');
 const addToCartBtn = document.getElementById('addToCartBtn');
 const personalize = document.getElementById('personalize');
+const club = document.getElementById('club');
+const isMember = document.getElementById('club-member-select');
 
 // Fetch function
 const fetchJson = async (url) => {
@@ -182,6 +184,7 @@ addToCartBtn.addEventListener('click', (e) => {
       totalPrice,
     };
     cart.push(selectedItem);
+    club.style.display = 'block';
     form.reset();
     // Disable all forms selects
     quantityInput.disabled = true;
@@ -211,73 +214,85 @@ const totalAmount = () => {
 
 // Function to create a cart with all elements
 const createCart = () => {
-  addToCartBtn.disabled = true;
-  checkoutBtn.disabled = true;
-  const cartContainer = document.getElementById('cartContainer');
-  const cartTable = document.createElement('table');
-  cartTable.className = 'table table-striped';
-  const cartHeader = document.createElement('thead');
-  const cartHeaderRow = document.createElement('tr');
-  const cartHeaderCell1 = document.createElement('th');
-  cartHeaderCell1.textContent = 'Gender';
-  const cartHeaderCell2 = document.createElement('th');
-  cartHeaderCell2.textContent = 'Sleeve Type';
-  const cartHeaderCell3 = document.createElement('th');
-  cartHeaderCell3.textContent = 'Kit';
-  const cartHeaderCell4 = document.createElement('th');
-  cartHeaderCell4.textContent = 'Size';
-  const cartHeaderCell5 = document.createElement('th');
-  cartHeaderCell5.textContent = 'Quantity';
-  const cartHeaderCell6 = document.createElement('th');
-  cartHeaderCell6.textContent = 'Player Number';
-  const cartHeaderCell7 = document.createElement('th');
-  cartHeaderCell7.textContent = 'Total Price';
-  cartHeaderCell7.className = 'text-end';
-  cartHeaderRow.appendChild(cartHeaderCell1);
-  cartHeaderRow.appendChild(cartHeaderCell2);
-  cartHeaderRow.appendChild(cartHeaderCell3);
-  cartHeaderRow.appendChild(cartHeaderCell4);
-  cartHeaderRow.appendChild(cartHeaderCell5);
-  cartHeaderRow.appendChild(cartHeaderCell6);
-  cartHeaderRow.appendChild(cartHeaderCell7);
-  cartHeader.appendChild(cartHeaderRow);
-  cartTable.appendChild(cartHeader);
-  const cartBody = document.createElement('tbody');
-  cart.forEach((item) => {
-    const cartBodyRow = document.createElement('tr');
-    const cartBodyCell1 = document.createElement('td');
-    cartBodyCell1.textContent = item.gender;
-    const cartBodyCell2 = document.createElement('td');
-    cartBodyCell2.textContent = item.sleeveType;
-    const cartBodyCell3 = document.createElement('td');
-    cartBodyCell3.textContent = item.kit;
-    const cartBodyCell4 = document.createElement('td');
-    cartBodyCell4.textContent = item.size;
-    const cartBodyCell5 = document.createElement('td');
-    cartBodyCell5.textContent = item.quantity;
-    const cartBodyCell6 = document.createElement('td');
-    cartBodyCell6.textContent = item.playerNumber;
-    const cartBodyCell7 = document.createElement('td');
-    cartBodyCell7.textContent = item.totalPrice;
-    cartBodyCell7.className = 'text-end';
-    cartBodyRow.appendChild(cartBodyCell1);
-    cartBodyRow.appendChild(cartBodyCell2);
-    cartBodyRow.appendChild(cartBodyCell3);
-    cartBodyRow.appendChild(cartBodyCell4);
-    cartBodyRow.appendChild(cartBodyCell5);
-    cartBodyRow.appendChild(cartBodyCell6);
-    cartBodyRow.appendChild(cartBodyCell7);
-    cartBody.appendChild(cartBodyRow);
-    cartTable.appendChild(cartBody);
-    cartContainer.appendChild(cartTable);
-  });
+  if (isMember.value === '0') {
+    alert('Please, Choose if you are member or not');
+  } else {
+    addToCartBtn.disabled = true;
+    checkoutBtn.disabled = true;
+    const member = isMember.value;
+    const memberDiscount = totalAmount() * member;
+    const totalAmountWithDiscount = totalAmount() - memberDiscount;
+    const cartContainer = document.getElementById('cartContainer');
+    const cartTable = document.createElement('table');
+    cartTable.className = 'table table-striped';
+    const cartHeader = document.createElement('thead');
+    const cartHeaderRow = document.createElement('tr');
+    const cartHeaderCell1 = document.createElement('th');
+    cartHeaderCell1.textContent = 'Gender';
+    const cartHeaderCell2 = document.createElement('th');
+    cartHeaderCell2.textContent = 'Sleeve Type';
+    const cartHeaderCell3 = document.createElement('th');
+    cartHeaderCell3.textContent = 'Kit';
+    const cartHeaderCell4 = document.createElement('th');
+    cartHeaderCell4.textContent = 'Size';
+    const cartHeaderCell5 = document.createElement('th');
+    cartHeaderCell5.textContent = 'Quantity';
+    const cartHeaderCell6 = document.createElement('th');
+    cartHeaderCell6.textContent = 'Player Number';
+    const cartHeaderCell7 = document.createElement('th');
+    cartHeaderCell7.textContent = 'Total Price';
+    cartHeaderCell7.className = 'text-end';
+    cartHeaderRow.appendChild(cartHeaderCell1);
+    cartHeaderRow.appendChild(cartHeaderCell2);
+    cartHeaderRow.appendChild(cartHeaderCell3);
+    cartHeaderRow.appendChild(cartHeaderCell4);
+    cartHeaderRow.appendChild(cartHeaderCell5);
+    cartHeaderRow.appendChild(cartHeaderCell6);
+    cartHeaderRow.appendChild(cartHeaderCell7);
+    cartHeader.appendChild(cartHeaderRow);
+    cartTable.appendChild(cartHeader);
+    const cartBody = document.createElement('tbody');
+    cart.forEach((item) => {
+      const cartBodyRow = document.createElement('tr');
+      const cartBodyCell1 = document.createElement('td');
+      cartBodyCell1.textContent = item.gender;
+      const cartBodyCell2 = document.createElement('td');
+      cartBodyCell2.textContent = item.sleeveType;
+      const cartBodyCell3 = document.createElement('td');
+      cartBodyCell3.textContent = item.kit;
+      const cartBodyCell4 = document.createElement('td');
+      cartBodyCell4.textContent = item.size;
+      const cartBodyCell5 = document.createElement('td');
+      cartBodyCell5.textContent = item.quantity;
+      const cartBodyCell6 = document.createElement('td');
+      cartBodyCell6.textContent = item.playerNumber;
+      const cartBodyCell7 = document.createElement('td');
+      cartBodyCell7.textContent = item.totalPrice;
+      cartBodyCell7.className = 'text-end';
+      cartBodyRow.appendChild(cartBodyCell1);
+      cartBodyRow.appendChild(cartBodyCell2);
+      cartBodyRow.appendChild(cartBodyCell3);
+      cartBodyRow.appendChild(cartBodyCell4);
+      cartBodyRow.appendChild(cartBodyCell5);
+      cartBodyRow.appendChild(cartBodyCell6);
+      cartBodyRow.appendChild(cartBodyCell7);
+      cartBody.appendChild(cartBodyRow);
+      cartTable.appendChild(cartBody);
+      cartContainer.appendChild(cartTable);
+    });
 
-  const totalAmountContainer = document.createElement('div');
-  totalAmountContainer.className = 'text-end';
-  const totalAmountText = document.createElement('h3');
-  totalAmountText.textContent = `Total Amount: ${totalAmount()}`;
-  totalAmountContainer.appendChild(totalAmountText);
-  cartContainer.appendChild(totalAmountContainer);
+    const totalAmountContainer = document.createElement('div');
+    const subtotalText = document.createElement('h4');
+    const memberText = document.createElement('h4');
+    const totalAmountText = document.createElement('h3');
+    subtotalText.textContent = `Subtotal: ${totalAmount()}`;
+    memberText.textContent = `Member Discount (20%): ${memberDiscount}`;
+    totalAmountText.textContent = `Total Amount: ${totalAmountWithDiscount}`;
+    totalAmountContainer.appendChild(subtotalText);
+    totalAmountContainer.appendChild(memberText);
+    totalAmountContainer.appendChild(totalAmountText);
+    cartContainer.appendChild(totalAmountContainer);
+  }
 };
 
 // Initialize
